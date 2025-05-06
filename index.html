@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>X Organization Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #f5f5f5;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #ccc;
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .header-title strong {
+      font-size: 28px;
+    }
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+    .main-container h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .main-container label {
+      font-size: 18px;
+      display: block; /* Ensure labels are on separate lines */
+      margin: 10px 0;
+    }
+    .footer {
+      background-color: #f0f0f0;
+      padding: 15px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+    <div class="header">
+      <div class="header-title">
+        <img src="https://workbox.io/wp-content/uploads/2022/11/Banner-1-2.png" alt="Workbox Logo" style="height:80px;">
+        <strong style="font-size: 24px;">Workbox Portal</strong>
+      </div>
+    </div>
+  
+    <div class="main-container" style="text-align: center; padding-top: 30px;">
+      <h2>Select a Template</h2>
+      <form style="display: flex; justify-content: center; gap: 40px; margin-top: 30px;">
+        <label style="display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+          <input type="radio" name="template" onclick="location.href='template1.html'">
+          <div style="margin-top: 10px;">Template 1 - Receipt System</div>
+          <img src="https://i.sstatic.net/eSSfS.png" alt="Receipt Template" style="height:150px; margin-top: 10px;">
+        </label>
+  
+        <label style="display: flex; flex-direction: column; align-items: center; cursor: pointer;">
+          <input type="radio" name="template" onclick="location.href='template2.html'">
+          <div style="margin-top: 10px;">Template 2 - Statement Viewer</div>
+          <img src="../template/template2.png" alt="Statement Template" style="height:150px; margin-top: 10px;">
+        </label>
+      </form>
+    </div>
+  
+    <div class="footer">
+      <div class="content-box">© 2025 X Organization. All rights reserved.</div>
+    </div>
+  </body>
+  
+</html>

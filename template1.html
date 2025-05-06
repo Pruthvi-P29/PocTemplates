@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>X Organization Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">
+        <img src="WU.png" alt="Workbox Logo" style="width:120px; vertical-align:middle; margin-right:15px; border-radius:10px">
+        <strong>Template 1 - Receipt System</strong>
+      </div>
+    <div class="dropdown-group">
+      <label style="color:black">Header View:</label>
+      <select id="headerDropdown" onchange="handleHeaderChange()">
+        <option value="receipt">Receipt</option>
+        <option value="statement">Monthly Statement</option>
+        <option value="year">Year Statement</option>
+      </select>
+    </div>
+    <div id="headerContent" class="content-box"></div>
+  </div>
+
+  <!-- Middle Section -->
+  <div class="main-container">
+    <div class="left-panel">
+      <h3>X Organization</h3>
+      <p>
+        <strong>Address:</strong><br>
+        123 Innovation Drive<br>
+        Tech City, TX 75001<br><br>
+        <strong>Phone:</strong> (123) 456-7890<br>
+        <strong>Email:</strong> info@xorg.com
+      </p>
+
+      <hr>
+
+      <label for="leftDropdown"><strong>View Info:</strong></label><br>
+      <select id="leftDropdown" onchange="handleLeftChange()">
+        <option value="">-- Select Info --</option>
+        <option value="about">About Us</option>
+        <option value="services">Services</option>
+        <option value="contact">Contact</option>
+      </select>
+    </div>
+
+    <div class="right-panel" id="rightPanel">
+      <!-- Dynamic content here -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="dropdown-group">
+      <label style="color:black">Footer Info:</label>
+      <select id="footerDropdown" onchange="handleFooterChange()">
+        <option value="">-- Select --</option>
+        <option value="support">Support</option>
+        <option value="policy">Policy</option>
+      </select>
+    </div>
+    <div id="footerContent" class="content-box"></div>
+  </div>
+
+  <script src="doc2.js"></script>
+</body>
+</html>
