@@ -7,27 +7,23 @@ function handleHeaderChange() {
   if (value === 'receipt') {
     html = `
           <img  id="Logo" src="WU.png" alt="Random Logo" style="max-width: 180px; height: 40px; float: left; border-radius: 50%;">
-      <h3 style="text-align: center;padding-left: 24px;">RECEIPT/RECIBO</h3>
-      <h3 style="text-align: center;">TRACKING NUMBER (MTCN) 
-          / NO. DE CONTROL DEL ENVIO</h3>
-       <p class="mtcn" style="text-align: center;">973-207-0255</p>
-        <strong><p style="text-align: center;">FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p></strong>`;
+      <h3 style="text-align: center;padding-left: 24px;">RECEIPT/RECIBO</h3>`;
   } else if (value === 'statement') {
     html = `
          <img  id="Logo" src="WU.png" alt="Random Logo" style="max-width: 180px; height: 40px; float: right; border-radius: 50%;">
       <h3 style="text-align: center;padding-left: 24px;">RECEIPT/RECIBO</h3>
-      <h3 style="text-align: center;">TRACKING NUMBER (MTCN) 
-          / NO. DE CONTROL DEL ENVIO</h3>
-        <strong><p class="mtcn" style="text-align: center;">973-207-0255</p></strong>
-        <strong><p style="text-align: center;">FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p></strong>`;
+      `;
   } else if (value === 'year') {
     html = `
-     <img  id="Logo" src="WU.png" alt="Random Logo" style="max-width: 180px; height: 40px; float: left; border-radius: 50%;">
-      <p style="text-align: center;">RECEIPT/RECIBO</p>
-      <p style="text-align: center;">TRACKING NUMBER (MTCN) 
-          / NO. DE CONTROL DEL ENVIO</p>
-        <p class="mtcn" style="text-align: center;">973-207-0255</p>
-        <p style="text-align: center;">FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p>`;
+     <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;">
+  <img src="WU.png" alt="Random Logo" style="max-width: 180px; height: 40px; border-radius: 50%; object-fit: contain;">
+  <div>
+    <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: #333; margin: 0;">
+      RECEIPT / RECIBO
+    </p>
+  </div>
+</div>
+      `;
   }
 
   panel.innerHTML = html;
@@ -89,6 +85,12 @@ function handleLeftChange() {
       <p>RAMSHA ANAMM<br>street number 35, alaska, NY, 10001, USA<br>2035354800</p>
     </div>
     `;
+  } else if (value === "tracking") {
+      panel.innerHTML = `<p>TRACKING NUMBER (MTCN) 
+          / NO. DECONTROL DELENVIO : <strong>973-207-0255</strong></p>
+        <p>FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p>
+         <p><strong>DUMMY ORGANISATION</strong></p>
+        <p>Operator ID / No. ID del Operador: <strong>100</strong></p> `;
   } else if (value === "services") {
     panel.innerHTML = `<div class="section-RECEIVER">
       <h4>RECEIVER/DESTINATARIO</h4>
