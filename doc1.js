@@ -11,7 +11,7 @@ function handleHeaderChange() {
       <h3 style="text-align: center;">TRACKING NUMBER (MTCN) 
           / NO. DE CONTROL DEL ENVIO</h3>
        <p class="mtcn" style="text-align: center;">973-207-0255</p>
-        <strong><p style="text-align: center;">FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p></strong>`;
+       <p style="text-align: center;">FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p>`;
     } else if (value === 'statement') {
       html = `
        <img  id="Logo" src="WU.png" alt="Random Logo" style="max-width: 180px; height: 40px; float: right; border-radius: 50%;">
@@ -88,18 +88,7 @@ function handleHeaderChange() {
         <h4>SENDER/REMITENTE</h4>
         <p>RAMSHA ANAMM<br>street number 35, alaska, NY, 10001, USA<br>2035354800</p>
       </div>
-      
-      <div class="section-Signature">
-      <p> ______________________
-        <br>
-        <strong>Your Signature / Su Firma 
-        </strong>
-      </p>
-      <p>
-      </strong> ______________________
-    <br>
-  <strong>Agent Signature / Firma del Agente <br></p>
-    </div>`;
+      `;
     } else if (value === "services") {
       panel.innerHTML = `<div class="section-RECEIVER">
         <h4>RECEIVER/DESTINATARIO</h4>
@@ -123,8 +112,10 @@ function handleHeaderChange() {
         <div class="row"><span>Exchange Rate:</span><span>1 USD = 1.9999 BZD</span></div>
         <div class="row"><span>Transfer Amount:</span><span>2,999.85 BZD</span></div>
         <div class="row"><span>Total to Receiver:</span><span>2,999.85 BZD</span></div>
-      </div>
-      <div class="section-Signature">
+      </div>`;
+    } else if (value === "contact") {
+      panel.innerHTML = 
+      `<div class="section-Signature">
       <p> ______________________
         <br>
         <strong>Your Signature / Su Firma 
@@ -135,9 +126,7 @@ function handleHeaderChange() {
     <br>
   <strong>Agent Signature / Firma del Agente <br></p>
     </div>
-`;
-    } else if (value === "contact") {
-      panel.innerHTML = "<h3>Contact Us</h3><p>Email: info@xorg.com<br>Phone: (123) 456-7890<br>Location: 123 Innovation Drive, TX</p>";
+      <p>Email: info@xorg.com<br>Phone: (123) 456-7890<br>Location: 123 Innovation Drive, TX</p>`;
     } else {
       panel.innerHTML = "";
     }
