@@ -6,6 +6,7 @@ body {
   
   .header, .footer {
     background-color: #f1d837;
+    margin-top: 40px;
     color: white;
     padding: 15px;
   }
@@ -33,16 +34,48 @@ body {
     color: #000;
     text-align: center;
   }
+
+  .preview-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Optional spacing between sections */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+  }
+
+  .preview-section {
+    flex: 1 1 50%; /* Responsive: shrink, grow, base width 30% */
+    box-sizing: border-box;
+  }
+
+  
+  .right-panel1 {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: white
+  }
+
+  .right-panel2  {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: white
+  }
   
   .main-container {
+    margin-top: 40px;
+    border: 1px solid black;
     display: flex;
-    min-height: 60vh;
+    min-height: 30vh;
     border-top: 2px solid #ccc;
     border-bottom: 2px solid #ccc;
   }
   
   .left-panel {
-    width: 30%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
     background-color: #e6f0ff;
     padding: 15px;
     border-right: 1px solid #ccc;
@@ -152,9 +185,12 @@ button:hover {
 }
 
 .preview-button-container {
-  text-align: center;
-  margin-top: 20px;
-}
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    text-align: center;
+    margin-top: 20px;
+  }
 
 .preview-button-container button {
   padding: 6px 10px;

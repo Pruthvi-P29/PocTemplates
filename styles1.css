@@ -6,7 +6,7 @@ body {
   
   .header, .footer {
     background-color: #f1d837;
-    margin-top: 20px;
+    margin-top: 40px;
     color: white;
     padding: 15px;
   }
@@ -36,8 +36,10 @@ body {
   }
   
   .main-container {
+    margin-top: 40px;
+    border: 1px solid black;
     display: flex;
-    min-height: 60vh;
+    min-height: 52vh;
     border-top: 2px solid #ccc;
     border-bottom: 2px solid #ccc;
   }
@@ -53,6 +55,20 @@ body {
     width: 70%;
     padding: 15px;
     background-color: #ffffff;
+  }
+
+  .right-panel1 {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: white
+  }
+
+  .right-panel2  {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: white
   }
   
   select {
@@ -172,12 +188,14 @@ button:hover {
 }
 
 .preview-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
   text-align: center;
   margin-top: 20px;
 }
 
 .preview-button-container button {
-  padding: 6px 10px;
   font-size: 16px;
   cursor: pointer;
   background-color: #007BFF;

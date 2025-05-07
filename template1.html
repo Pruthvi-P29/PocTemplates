@@ -28,28 +28,34 @@
   <!-- Middle Section -->
   <div class="main-container">
     <div class="left-panel">
-      <!-- <h3>🏢 X Organization</h3> -->
-      <p>
-        <strong>Address:</strong><br>
-        123 Innovation Drive<br>
-        Tech City, TX 75001<br><br>
-        <strong>Phone:</strong> (123) 456-7890<br>
-        <strong>Email:</strong> info@xorg.com
-      </p>
+      <div style="margin-bottom: 40px; margin-top:30px">
+        <label for="leftDropdown1"><strong>Select section 1:</strong></label><br>
+        <select id="leftDropdown1" onchange="handleLeftChange()">
+          <option value="">-- Select Info --</option>
+          <option value="about">About Us</option>
+          <option value="services">Services</option>
+          <option value="contact">Contact</option>
+        </select>
+
+      <div class="right-panel1" id="rightPanel1"></div>
+      </div>
 
       <hr>
 
-      <label for="leftDropdown"><strong>View Info:</strong></label><br>
-      <select id="leftDropdown" onchange="handleLeftChange()">
-        <option value="">-- Select Info --</option>
-        <option value="about">About Us</option>
-        <option value="services">Services</option>
-        <option value="contact">Contact</option>
-      </select>
+      <div style="margin-top: 40px">
+        <label for="leftDropdown2"><strong>Select section 2:</strong></label><br>
+        <select id="leftDropdown2" onchange="handleLeftChange()">
+          <option value="">-- Select Info --</option>
+          <option value="about">About Us</option>
+          <option value="services">Services</option>
+          <option value="contact">Contact</option>
+        </select>
+  
+        <div class="right-panel2" id="rightPanel2"></div>
+      </div>
     </div>
+</div>
 
-    <div class="right-panel" id="rightPanel"></div>
-  </div>
 
   <!-- Footer -->
   <div class="footer">
@@ -69,7 +75,7 @@
      
     <div class="preview-button-container">
       <!-- Back Button -->
-      <button onclick="location.href='index.html'" style="margin: 20px; padding: 5px 10px; font-size: 16px; cursor: pointer; background:#959292">
+      <button onclick="location.href='index.html'" style="margin-left:20px; padding: 5px 10px; font-size: 16px; cursor: pointer; background:#959292">
         ⬅️ Back to Home
       </button>
       <!-- Preview Button -->

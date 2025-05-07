@@ -15,8 +15,9 @@
       </div>
       <div class="dropdown-group">
         <label style="color:black">
-          View:
-          <select id="headerDropdown" onchange="handleViewChange()">
+          Select Header:
+          <select id="headerDropdown" onchange="handleHeaderChange()">
+            <option value="">-- Select --</option>  
             <option value="receipt">Receipt</option>
             <option value="statement">Statement</option>
             <option value="year">Year Statement</option>
@@ -29,33 +30,38 @@
     </header>
 
     <!-- Middle split panel -->
-    <main class="main-container">
+    <div class="main-container">
       <div class="left-panel">
-        <!-- <h3>🏢 X Organization</h3> -->
-        <p><strong>Address:</strong> 123 Main St, Metropolis</p>
-        <p><strong>Contact:</strong> info@xorg.com</p>
-        <p><strong>Phone:</strong> +1 555 123 4567</p>
-        <p><strong>Tax ID:</strong> XORG-TAX-789</p>
-
-        <hr />
-
-        <label for="leftDropdown"><strong>View Info:</strong></label
-        ><br />
-        <select id="leftDropdown" onchange="handleLeftChange()">
-          <option value="">-- Select Info --</option>
-          <option value="about">About Us</option>
-          <option value="services">Services</option>
-          <option value="contact">Contact</option>
-        </select>
+        <div class="section" style="margin-top:20px; width: 45%; padding-right: 10px;">
+          <label for="leftDropdown1"><strong>Select section 1:</strong></label><br>
+          <select id="leftDropdown1" onchange="handleLeftChange()">
+            <option value="">-- Select Info --</option>
+            <option value="about">About Us</option>
+            <option value="services">Services</option>
+            <option value="contact">Contact</option>
+          </select>
+          <div class="right-panel1" id="rightPanel1"></div>
+        </div>
+    
+        <hr class="separator" />
+    
+        <div class="section" style="margin-top:20px; width: 45%; padding-left: 10px;">
+          <label for="leftDropdown2"><strong>Select section 2:</strong></label><br>
+          <select id="leftDropdown2" onchange="handleLeftChange()">
+            <option value="">-- Select Info --</option>
+            <option value="about">About Us</option>
+            <option value="services">Services</option>
+            <option value="contact">Contact</option>
+          </select>
+          <div class="right-panel2" id="rightPanel2"></div>
+        </div>
       </div>
-
-      <div class="right-panel" id="rightPanel"></div>
-    </main>
+    </div>
 
     <footer class="footer">
       <div class="dropdown-group">
         <label style="color:black">
-          Help:
+          Select Footer:
           <select id="footerDropdown" onchange="handleFooterChange()">
             <option value="">Select</option>
             <option value="support">Support Info</option>
@@ -68,7 +74,7 @@
 
     <div class="preview-button-container">
       <!-- Back Button -->
-      <button onclick="location.href='index.html'" style="margin: 20px; padding: 5px 10px; font-size: 16px; cursor: pointer; background:#959292">
+      <button onclick="location.href='index.html'" style="margin-left:20px; padding: 5px 10px; font-size: 16px; cursor: pointer; background:#959292">
         ⬅️ Back to Home
       </button>
       <!-- Preview Button -->
