@@ -1,7 +1,8 @@
 function handleHeaderChange() {
     const value = document.getElementById('headerDropdown').value;
     const panel = document.getElementById('headerContent');
-  
+    console.log(value, "here101.....")
+
     let html = '';
   
     if (value === 'receipt') {
@@ -10,14 +11,17 @@ function handleHeaderChange() {
           <p><strong>Receipt #202504</strong><br>
           Date: 2025-05-06<br>
           Customer: Jane Doe</p>
+          <div>
           <ul>
             <li>Product A x1 - $50.00</li>
             <li>Product B x2 - $30.00</li>
           </ul>
+          </div>
           <p>Subtotal: $110.00</p>
           <p>Tax: $8.80</p>
           <p><strong>Total: $118.80</strong></p>
         </div>`;
+        panel.style.display = 'block';
     } else if (value === 'statement') {
       html = `
         <div class="statement">
@@ -29,6 +33,7 @@ function handleHeaderChange() {
           </ul>
           <p><strong>Balance: $0.00</strong></p>
         </div>`;
+        panel.style.display = 'block';
     } else if (value === 'year') {
       html = `
         <div class="year-statement">
@@ -37,8 +42,13 @@ function handleHeaderChange() {
           <p>Total Payments: $1,200.00</p>
           <p><strong>Year-End Balance: $0.00</strong></p>
         </div>`;
+        panel.style.display = 'block';
+    } else {
+        panel.innerHTML = "";
+        panel.style.display = 'none'; // Hide content
+        return;
     }
-  
+    
     panel.innerHTML = html;
   }
   
@@ -81,6 +91,7 @@ function handleHeaderChange() {
 
     // Dynamically create HTML for the preview
     let previewHTML = `
+   <div class="preview-row">
     <div class="preview-section header-preview">
       <h3><strong>Header View:</strong></h3>
       <div class="preview-content">${headerValue}</div>
@@ -93,6 +104,7 @@ function handleHeaderChange() {
       <h3><strong>Footer Info:</strong></h3>
       <div class="preview-content">${footerValue}</div>
     </div>
+  </div>
   `;
 
     // Insert the preview HTML into the popup
@@ -109,11 +121,11 @@ function handleHeaderChange() {
       document.getElementById("popup").style.display = "none";
     }
   
-  window.onload = () => {
-    document.getElementById('headerDropdown').value = 'receipt';
-    handleHeaderChange();
-  };
+//   window.onload = () => {
+//     document.getElementById('headerDropdown').value = 'receipt';
+//     handleHeaderChange();
+//   };
 
   window.addEventListener('DOMContentLoaded', handleFooterChange);
 
-  
+  window.addEventListener('DOMContentLoaded', handleHeaderChange);

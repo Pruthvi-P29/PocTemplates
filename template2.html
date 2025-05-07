@@ -1,60 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Template 2 - Receipt System</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template 2 - Receipt System</title>
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body>
+    <!-- Header with dropdown to select content -->
+    <header class="header">
+      <div class="header-title">
+        <img src="WU.png" alt="Workbox Logo" style="height:60px; vertical-align:middle; margin-right:15px; border-radius:10px">
+        <strong>CMS - Template 2</strong>
+      </div>
+      <div class="dropdown-group">
+        <label style="color:black">
+          View:
+          <select id="headerDropdown" onchange="handleViewChange()">
+            <option value="receipt">Receipt</option>
+            <option value="statement">Statement</option>
+            <option value="year">Year Statement</option>
+          </select>
+        </label>
+        <div id="headerContent" class="content-box">
+          <!-- Content will be displayed here based on selection -->
+        </div>
+      </div>
+    </header>
 
-  <!-- Header with dropdown to select content -->
-  <header class="header">
-    <div class="header-title">🧾 X Organization Portal - Template 2</div>
-    <div class="dropdown-group">
-      <label>
-        View:
-        <select id="headerDropdown" onchange="handleViewChange()">
-          <option value="receipt">Receipt</option>
-          <option value="statement">Statement</option>
-          <option value="year">Year Statement</option>
+    <!-- Middle split panel -->
+    <main class="main-container">
+      <div class="left-panel">
+        <!-- <h3>🏢 X Organization</h3> -->
+        <p><strong>Address:</strong> 123 Main St, Metropolis</p>
+        <p><strong>Contact:</strong> info@xorg.com</p>
+        <p><strong>Phone:</strong> +1 555 123 4567</p>
+        <p><strong>Tax ID:</strong> XORG-TAX-789</p>
+
+        <hr />
+
+        <label for="leftDropdown"><strong>View Info:</strong></label
+        ><br />
+        <select id="leftDropdown" onchange="handleLeftChange()">
+          <option value="">-- Select Info --</option>
+          <option value="about">About Us</option>
+          <option value="services">Services</option>
+          <option value="contact">Contact</option>
         </select>
-      </label>
-      <div id="headerContent" class="header-content">
-        <!-- Content will be displayed here based on selection -->
+      </div>
+
+      <div class="right-panel" id="rightPanel"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="dropdown-group">
+        <label style="color:black">
+          Help:
+          <select id="footerDropdown" onchange="handleFooterChange()">
+            <option value="">Select</option>
+            <option value="support">Support Info</option>
+            <option value="policy">Return Policy</option>
+          </select>
+        </label>
+        <div id="footerContent" class="content-box"></div>
+      </div>
+    </footer>
+
+    <div class="preview-button-container">
+      <!-- Back Button -->
+      <button onclick="location.href='index.html'" style="margin: 20px; padding: 5px 10px; font-size: 16px; cursor: pointer; background:#959292">
+        ⬅️ Back to Home
+      </button>
+      <!-- Preview Button -->
+      <button id="previewButton" onclick="showPreview()" style="background: #007BFF;">Preview</button>
+    </div>
+
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h2 class="preview-heading">Preview</h2>
+        <div id="previewContent"></div>
+        <div class="close-button-container">
+          <!-- <button onclick="editPreview()" style="background-color: #007BFF;">Edit</button> -->
+          <button onclick="closePopup()">Close</button>
+        </div>
       </div>
     </div>
-  </header>
 
-  <!-- Middle split panel -->
-  <main class="main-container">
-    <div class="left-panel">
-      <h3>🏢 X Organization</h3>
-      <p><strong>Address:</strong> 123 Main St, Metropolis</p>
-      <p><strong>Contact:</strong> info@xorg.com</p>
-      <p><strong>Phone:</strong> +1 555 123 4567</p>
-      <p><strong>Tax ID:</strong> XORG-TAX-789</p>
+    <div class="footer">
+      <div class="index-content-box">© 2025 Western Union. All rights reserved.</div>
     </div>
 
-    <div class="right-panel" id="rightPanel">
-      <!-- Content will be updated dynamically -->
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="dropdown-group">
-      <label>
-        Help:
-        <select id="footerDropdown" onchange="handleFooterChange()">
-          <option value="">Select</option>
-          <option value="support">Support Info</option>
-          <option value="policy">Return Policy</option>
-        </select>
-      </label>
-      <div id="footerContent" class="dropdown-content"></div>
-    </div>
-  </footer>
-
-  <script src="doc2.js"></script>
-</body>
+    <script src="doc2.js"></script>
+  </body>
 </html>

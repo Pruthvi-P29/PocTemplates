@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>X Organization Portal</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles1.css">
 </head>
 <body>
 
   <!-- Header -->
   <div class="header">
     <div class="header-title">
-        <img src="WU.png" alt="Workbox Logo" style="width:120px; vertical-align:middle; margin-right:15px; border-radius:10px">
-        <strong>Template 1 - Receipt System</strong>
+        <img src="WU.png" alt="Workbox Logo" style="height:60px; vertical-align:middle; margin-right:15px; border-radius:10px">
+        <strong>CMS - Template 1</strong>
       </div>
     <div class="dropdown-group">
-      <label style="color:black">Header View:</label>
+      <label style="color:black">Select Header:</label>
       <select id="headerDropdown" onchange="handleHeaderChange()">
+        <option value="">-- Select --</option>
         <option value="receipt">Receipt</option>
         <option value="statement">Monthly Statement</option>
         <option value="year">Year Statement</option>
@@ -27,7 +28,7 @@
   <!-- Middle Section -->
   <div class="main-container">
     <div class="left-panel">
-      <h3>X Organization</h3>
+      <!-- <h3>🏢 X Organization</h3> -->
       <p>
         <strong>Address:</strong><br>
         123 Innovation Drive<br>
@@ -47,15 +48,13 @@
       </select>
     </div>
 
-    <div class="right-panel" id="rightPanel">
-      <!-- Dynamic content here -->
-    </div>
+    <div class="right-panel" id="rightPanel"></div>
   </div>
 
   <!-- Footer -->
   <div class="footer">
     <div class="dropdown-group">
-      <label style="color:black">Footer Info:</label>
+      <label style="color:black">Select Footer:</label>
       <select id="footerDropdown" onchange="handleFooterChange()">
         <option value="">-- Select --</option>
         <option value="support">Support</option>
@@ -65,6 +64,33 @@
     <div id="footerContent" class="content-box"></div>
   </div>
 
-  <script src="doc2.js"></script>
+
+    
+     
+    <div class="preview-button-container">
+      <!-- Back Button -->
+      <button onclick="location.href='index.html'" style="margin: 20px; padding: 5px 10px; font-size: 16px; cursor: pointer; background:#959292">
+        ⬅️ Back to Home
+      </button>
+      <!-- Preview Button -->
+      <button id="previewButton" onclick="showPreview()" style="background: #007BFF;">Preview</button>
+    </div>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h2 class="preview-heading">Preview</h2>
+        <div id="previewContent"></div>
+        <div class="close-button-container">
+          <!-- <button onclick="editPreview()" style="background-color: #007BFF;">Edit</button> -->
+          <button onclick="closePopup()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="index-content-box">© 2025 Western Union. All rights reserved.</div>
+    </div>
+
+  <script src="doc1.js"></script>
 </body>
 </html>
