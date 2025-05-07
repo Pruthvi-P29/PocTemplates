@@ -6,29 +6,20 @@ function handleHeaderChange() {
 
   if (value === 'receipt') {
     html = `
-      <div class="receipt">
-        <p><strong>Receipt #202504</strong><br>
-        Date: 2025-05-06<br>
-        Customer: Jane Doe</p>
-        <ul>
-          <li>Product A x1 - $50.00</li>
-          <li>Product B x2 - $30.00</li>
-        </ul>
-        <p>Subtotal: $110.00</p>
-        <p>Tax: $8.80</p>
-        <p><strong>Total: $118.80</strong></p>
-      </div>`;
+          <img  id="Logo" src="WU.png" alt="Random Logo" style="max-width: 180px; height: 40px; float: left; border-radius: 50%;">
+      <h3 style="text-align: center;padding-left: 24px;">RECEIPT/RECIBO</h3>
+      <h3 style="text-align: center;">TRACKING NUMBER (MTCN) 
+          / NO. DE CONTROL DEL ENVIO</h3>
+       <p class="mtcn" style="text-align: center;">973-207-0255</p>
+        <strong><p style="text-align: center;">FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p></strong>`;
   } else if (value === 'statement') {
     html = `
-      <div class="statement">
-        <p><strong>April 2025 Statement</strong></p>
-        <ul>
-          <li>04/02 - Invoice #1001 - $75.00</li>
-          <li>04/10 - Invoice #1002 - $85.00</li>
-          <li>04/22 - Payment Received - ($160.00)</li>
-        </ul>
-        <p><strong>Balance: $0.00</strong></p>
-      </div>`;
+         <img  id="Logo" src="WU.png" alt="Random Logo" style="max-width: 180px; height: 40px; float: right; border-radius: 50%;">
+      <h3 style="text-align: center;padding-left: 24px;">RECEIPT/RECIBO</h3>
+      <h3 style="text-align: center;">TRACKING NUMBER (MTCN) 
+          / NO. DE CONTROL DEL ENVIO</h3>
+        <strong><p class="mtcn" style="text-align: center;">973-207-0255</p></strong>
+        <strong><p style="text-align: center;">FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p></strong>`;
   } else if (value === 'year') {
     html = `
       <div class="year-statement">
