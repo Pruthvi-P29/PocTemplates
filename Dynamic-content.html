@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Content</title>
+</head>
+<body>
+  <h2>Add Content for a Dropdown Option</h2>
+ 
+  <form id="contentForm">
+    <label for="dropdownKey">Select Option:</label>
+    <select name="dropdownKey" id="dropdownKey">
+      <option value="option1">Option 1 - Overview</option>
+      <option value="option2">Option 2 - Details</option>
+      <option value="option3">Option 3 - Summary</option>
+    </select><br><br>
+ 
+    <label for="contentText">Enter Content:</label><br>
+    <textarea id="contentText" rows="5" cols="50" required></textarea><br><br>
+ 
+    <button type="submit">Save Content</button>
+  </form>
+ 
+  <p id="message"></p>
+ 
+  <script>
+    document.getElementById('contentForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const key = document.getElementById('dropdownKey').value;
+      const content = document.getElementById('contentText').value.trim();
+ 
+      if (content) {
+        localStorage.setItem(`dropdownContent-${key}`, content);
+        document.getElementById('message').textContent = 'Content saved successfully!';
+        this.reset();
+      }
+    });
+  </script>
+</body>
+</html>

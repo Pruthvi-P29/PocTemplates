@@ -1,3 +1,5 @@
+localStorage.getItem("")
+
 function handleHeaderChange() {
   const value = document.getElementById('headerDropdown').value;
   const panel = document.getElementById('headerContent');
@@ -7,7 +9,7 @@ function handleHeaderChange() {
   if (value === 'receipt') {
     html = `
                  <img  id="Logo" src="WU.png" alt="Random Logo" style="max-width: 180px; height: 40px; float: left; border-radius: 50%;">
-        <h3 style="text-align: center;padding-left: 24px;">RECEIPT/RECIBO</h3>`;
+        <h3 style="text-align: center;padding-left: 24px;">${receiptTitle}</h3>`;
       panel.style.display = 'block';
   } else if (value === 'statement') {
     html = `
@@ -84,56 +86,9 @@ function handleLeftChange() {
 
   // Update the content in the panel based on section 1's selection
   if (section1Value === "about") {
-    panel1.innerHTML = `<div class="section-SERVICE DETAILS" style="padding: top -10px;;">
-    <h4 style="padding-top: -10px;">SERVICE DETAILS/DETALLES DEL SERVICIO:</h4>
-    <div class="row"><span>Date of Transactions:</span><span>December 05, 2024 / Diciembre 05, 2024</span></div>
-    <div class="row"><span>Time of Transactions:</span><span>04:13 AM EST</span></div>
-    <div class="row"><span>Service Type:</span><span>BELIZE CHAMBER OF COMMERCE CASH</span></div>
-    <div class="row"><span>Payout Location:</span><span>Belize / Belice</span></div>
-    <div class="row"><span>Date Available:</span><span>December 05, 2024 / Diciembre 05, 2024</span></div>
-  </div>
-  <div class="section-SENDER">
-    <h4>SENDER/REMITENTE</h4>
-    <p>RAMSHA ANAMM<br>street number 35, alaska, NY, 10001, USA<br>2035354800</p>
-  </div>`;
-    panel1.style.display = 'block';
-  } else if (section1Value === "tracking") {
-    panel1.innerHTML = `<p>TRACKING NUMBER (MTCN) 
-        / NO. DECONTROL DELENVIO : <strong>973-207-0255</strong></p>
-      <p>FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p>
-       <p><strong>DUMMY ORGANISATION</strong></p>
-      <p>Operator ID / No. ID del Operador: <strong>100</strong></p> `;
-      panel1.style.display = 'block';
-} else if (section1Value === "services") {
-    panel1.innerHTML = `<p>TRACKING NUMBER (MTCN) 
-        / NO. DECONTROL DELENVIO : <strong>973-207-0255</strong></p>
-      <p>FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p>
-       <p><strong>DUMMY ORGANISATION</strong></p>
-      <p>Operator ID / No. ID del Operador: <strong>100</strong></p>`;
-    panel1.style.display = 'block';
-  } else if (section1Value === "contact") {
-    panel1.innerHTML =  `<div class="section-Signature">
-    <p> ______________________
-      <br>
-      <strong>Your Signature / Su Firma 
-      </strong>
-    </p>
-    <p>
-    </strong> ______________________
-  <br>
-<strong>Agent Signature / Firma del Agente <br></p>
-  </div>
-    <p>Email: info@xorg.com<br>Phone: (123) 456-7890<br>Location: 123 Innovation Drive, TX</p>`;
-    panel1.style.display = 'block';
-  } else {
-    panel1.innerHTML = "";
-    panel1.style.display = 'none'; // Hide content
-  }
-
-  if (section2Value === "about") {
-    panel2.innerHTML = ` <div class="section-SERVICE DETAILS" style="padding: top -10px;;">
+    panel1.innerHTML = ` <div class="section-SERVICE DETAILS" style="padding: top -10px;;">
       <h4 style="padding-top: -10px;">SERVICE DETAILS/DETALLES DEL SERVICIO:</h4>
-      <div class="row"><span>Date of Transactions:</span><span>December 05, 2024 / Diciembre 05, 2024</span></div>
+      <div class="row"><span>Date of Transactions:</span><span>${localStorage.getItem("dateOfTransactions")} / Diciembre 05, 2024</span></div>
       <div class="row"><span>Time of Transactions:</span><span>04:13 AM EST</span></div>
       <div class="row"><span>Service Type:</span><span>BELIZE CHAMBER OF COMMERCE CASH</span></div>
       <div class="row"><span>Payout Location:</span><span>Belize / Belice</span></div>
@@ -144,23 +99,16 @@ function handleLeftChange() {
       <p>RAMSHA ANAMM<br>street number 35, alaska, NY, 10001, USA<br>2035354800</p>
     </div>
     `;
-    panel2.style.display = 'block';
-  } else if (section2Value === "tracking") {
-    panel2.innerHTML = `<p>TRACKING NUMBER (MTCN) 
-        / NO. DECONTROL DELENVIO : <strong>973-207-0255</strong></p>
-      <p>FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p>
-       <p><strong>DUMMY ORGANISATION</strong></p>
-      <p>Operator ID / No. ID del Operador: <strong>100</strong></p> `;
-      panel2.style.display = 'block';
-} 
-  else if (section2Value === "services") {
-    panel2.innerHTML = `<p>TRACKING NUMBER (MTCN) 
+    panel1.style.display = 'block';
+  } else if (section1Value === "tracking") {
+      panel1.innerHTML = `<p>TRACKING NUMBER (MTCN) 
         / NO. DECONTROL DELENVIO : <strong>973-207-0255</strong></p>
       <p>FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p>
        <p><strong>DUMMY ORGANISATION</strong></p>
       <p>Operator ID / No. ID del Operador: <strong>100</strong></p>`;
-  } else if (section2Value === "services") {
-    panel2.innerHTML = `<div class="section-RECEIVER">
+      panel1.style.display = 'block';
+  } else if (section1Value === "services") {
+    panel1.innerHTML = `<div class="section-RECEIVER">
       <h4>RECEIVER/DESTINATARIO</h4>
       <p>JOJO SHINCHAN<br>Belmopan, Cayo</p>
     </div>
@@ -183,9 +131,77 @@ function handleLeftChange() {
       <div class="row"><span>Transfer Amount:</span><span>2,999.85 BZD</span></div>
       <div class="row"><span>Total to Receiver:</span><span>2,999.85 BZD</span></div>
     </div>`;
+    panel1.style.display = 'block';
+  } else if (section1Value === "contact") {
+    panel1.innerHTML = 
+    `<div class="section-Signature">
+    <p> ______________________
+      <br>
+      <strong>Your Signature / Su Firma 
+      </strong>
+    </p>
+    <p>
+    </strong> ______________________
+  <br>
+<strong>Agent Signature / Firma del Agente <br></p>
+  </div>
+    <p>Email: info@xorg.com<br>Phone: (123) 456-7890<br>Location: 123 Innovation Drive, TX</p>`;
+    panel1.style.display = 'block';
+  }else {
+    panel1.innerHTML = "";
+    panel1.style.display = 'none'; // Hide content
+  }
+
+  if (section2Value === "about") {
+    panel2.innerHTML = ` <div class="section-SERVICE DETAILS" style="padding: top -10px;;">
+      <h4 style="padding-top: -10px;">SERVICE DETAILS/DETALLES DEL SERVICIO:</h4>
+      <div class="row"><span>Date of Transactions:</span><span>${dateOfTransactions} / Diciembre 05, 2024</span></div>
+      <div class="row"><span>Time of Transactions:</span><span>04:13 AM EST</span></div>
+      <div class="row"><span>Service Type:</span><span>BELIZE CHAMBER OF COMMERCE CASH</span></div>
+      <div class="row"><span>Payout Location:</span><span>Belize / Belice</span></div>
+      <div class="row"><span>Date Available:</span><span>December 05, 2024 / Diciembre 05, 2024</span></div>
+    </div>
+    <div class="section-SENDER">
+      <h4>SENDER/REMITENTE</h4>
+      <p>RAMSHA ANAMM<br>street number 35, alaska, NY, 10001, USA<br>2035354800</p>
+    </div>
+    `;
+    panel2.style.display = 'block';
+  } else if (section2Value === "tracking") {
+      panel2.innerHTML = `<p>TRACKING NUMBER (MTCN) 
+        / NO. DECONTROL DELENVIO : <strong>973-207-0255</strong></p>
+      <p>FOR CUSTOMER SERVICE, CALL 1-800-777-8784 / PARA COMUNICARSE CON EL SERVICIO DE ATENCION AL CLIENTE, LLAME AL 1-800-777-8784</p>
+       <p><strong>DUMMY ORGANISATION</strong></p>
+      <p>Operator ID / No. ID del Operador: <strong>100</strong></p>`;
+      panel2.style.display = 'block';
+  } else if (section2Value === "services") {
+    panel2.innerHTML = `<div class="section-RECEIVER">
+      <h4>RECEIVER/DESTINATARIO</h4>
+      <p>JOJO SHINCHAN<br>Belmopan, Cayo</p>
+    </div>
+
+    <div class="section-TRANSACTION DETAILS">
+      <h4>TRANSACTION DETAILS/DETALLES DE LA TRANSACCION</h4>
+      <div class="row"><span>Transfer Amount:</span><span>${transferAmount}</span></div>
+      <div class="row"><span>Transfer Fees:</span><span>+ 15.00 USD</span></div>
+      <div class="row"><span>Additional Fees:</span><span>+ 0.00 USD</span></div>
+      <div class="row"><span>Transfer Taxes:</span><span>+ 0.00 USD</span></div>
+      <div class="row"><span>Promotion Discount:</span><span>- 0.00 USD</span></div>
+    
+      <!-- Break line before total -->
+      <hr class="break">
+      <div class="row"><span>Total:</span><span>1,515.00 USD</span></div>
+    
+      <!-- Break line before exchange rate -->
+      <hr class="break">
+      <div class="row"><span>Exchange Rate:</span><span>1 USD = 1.9999 BZD</span></div>
+      <div class="row"><span>Transfer Amount:</span><span>2,999.85 BZD</span></div>
+      <div class="row"><span>Total to Receiver:</span><span>2,999.85 BZD</span></div>
+    </div>`;
     panel2.style.display = 'block';
   } else if (section2Value === "contact") {
-    panel2.innerHTML =  `<div class="section-Signature">
+    panel2.innerHTML = 
+    `<div class="section-Signature">
     <p> ______________________
       <br>
       <strong>Your Signature / Su Firma 
@@ -244,19 +260,19 @@ function showPreview() {
 
   // Dynamically create HTML for the preview
   let previewHTML = `
-  <div class="preview-section header-preview">
+  <div class="">
     <h3><strong>Header View:</strong></h3>
     <div class="preview-content">${headerValue}</div>
   </div>
-  <div class="preview-section left-info-preview">
+  <div class="">
     <h3><strong>Section 1 View:</strong></h3>
     <div class="preview-content">${leftValue1}</div>
   </div>
-   <div class="preview-section left-info-preview">
+   <div class="">
     <h3><strong>Section 2 View:</strong></h3>
     <div class="preview-content">${leftValue2}</div>
   </div>
-  <div class="preview-section footer-preview">
+  <div class="">
     <h3><strong>Footer Info:</strong></h3>
     <div class="preview-content">${footerValue}</div>
   </div>
@@ -277,10 +293,19 @@ function showPreview() {
     document.getElementById("popup").style.display = "none";
   }
 
+  function setDynamicValues() {
+    localStorage.setItem("receiptTitle", "RECEIPT/RECIBO");
+    localStorage.setItem("customerServiceNumber", "1-800-777-8784");
+    localStorage.setItem("dateOfTransactions", "December 05, 2024");
+
+  }
+
 //   window.onload = () => {
 //     document.getElementById('headerDropdown').value = 'receipt';
 //     handleHeaderChange();
 //   };
+
+window.addEventListener('DOMContentLoaded', setDynamicValues);
 
 window.addEventListener('DOMContentLoaded', handleFooterChange);
 

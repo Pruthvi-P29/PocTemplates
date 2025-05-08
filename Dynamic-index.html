@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Content</title>
+</head>
+<body>
+  <h2>Select an Option</h2>
+ 
+  <label for="dropdown">Choose:</label>
+  <select id="dropdown" onchange="showContent()">
+    <option value="option1">Option 1 - Overview</option>
+    <option value="option2">Option 2 - Details</option>
+    <option value="option3">Option 3 - Summary</option>
+  </select>
+ 
+  <div id="contentDisplay" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;"></div>
+ 
+  <script>
+    function showContent() {
+      const key = document.getElementById('dropdown').value;
+      const content = localStorage.getItem(`dropdownContent-${key}`) || "No content saved yet for this option.";
+      document.getElementById('contentDisplay').innerText = content;
+    }
+ 
+    // Load initial content
+    window.onload = showContent;
+  </script>
+</body>
+</html>

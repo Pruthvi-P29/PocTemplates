@@ -6,9 +6,12 @@ body {
   
   .header, .footer {
     background-color: #f1d837;
-    margin-top: 40px;
     color: white;
     padding: 15px;
+  }
+
+  .footer {
+    margin-top: 40px;
   }
   
   .header-title {

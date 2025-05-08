@@ -17,15 +17,14 @@
       <div class="dropdown-group">
         <label style="color:black">
           Select Header:
-          <select id="headerDropdown" onchange="handleViewChange()">
+          <select id="headerDropdown" onchange="handleHeaderChange()">
+            <option value="">-- Select --</option>
             <option value="receipt">Header 1</option>
             <option value="statement">Header 2</option>
             <option value="year">Header 3</option>
           </select>
         </label>
-        <div id="headerContent" class="content-box">
-          <!-- Content will be displayed here based on selection -->
-        </div>
+        <div id="headerContent" class="content-box"></div>
       </div>
     </header>
 
